@@ -1,0 +1,416 @@
+/* Brian Thompson
+   WEB 125 - Lesson 10
+   3/18/2024 */
+
+/* CSS Reset */
+body, header, footer, img, h1, section, div, p, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style rule for responsive images */
+img {
+    max-width: 100%;
+}
+
+/* Style rule for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Style rules for skip navigation link */
+.skip {
+    position: absolute;
+    left: -999px;
+}
+
+.skip:focus {
+    color: #24265d;
+    background-color: #fef0e2;
+    text-decoration: none;
+    padding: 0.5%;
+    top: auto;
+    left: auto;
+    right: 1px;
+    z-index: 1;
+}
+
+/* Style rules for body */
+body {
+    font-size: 16px;
+    color: #24265d;
+    background-color: #fef0e2; 
+    font-family: 'Roboto Slab', serif;
+}
+
+
+/* Style rules for the header */
+header img {
+    margin: 0 auto;
+    display: block;
+    max-height: 100px;
+    padding-left: 15%;
+}
+
+
+/* Style rules for navigation */
+input#hamburger_menu {
+    display: none;
+}
+
+input#hamburger_menu:checked+ nav {
+    left: 0px;
+}
+
+input#hamburger_menu:checked + nav label {
+    background-color: #fef0e2; 
+    background-image: url(../images/menu_close.png);
+}
+
+
+nav {
+    width: 180px;
+    background-color: #fef0e2; 
+    padding: 0.625em 1.25em;
+    color: #24265d;
+    position: absolute;
+    top: 0px;
+    left: -180px;
+    transition: left .8s ease-in-out;
+}
+
+nav a {
+    color: #24265d;
+    text-decoration: none;
+    display: block;
+    margin: 0;
+    padding: 0.875em 0;
+    border-top: 1px solid #24265d;
+}
+
+nav a:first-of-type {
+    border-top: none;
+}
+
+nav label {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: #fef0e2 url(../images/menu_open.png) no-repeat center center;
+    position: absolute;
+    top: 20px;
+    right: -42px;
+}
+
+/* Style rules for main content */
+h1 {
+    font-size: 1.5rem;
+}
+
+.shadow_text {
+    text-shadow: 2px 2px 4px #f5bc83;
+}
+
+
+.festival1 {
+    display: none;
+}
+
+
+.feature img, .orange_box img, .two_column div img {
+    display: block;
+    margin: 0 auto;
+}
+
+.blue_box {
+    padding: 0.5%;
+}
+
+.content img {
+    margin: 0 auto;
+}
+
+.shadow_image {
+    box-shadow: 0 0 4px #9a8936;
+}
+
+.orange_box {
+    text-align: center;
+    background-color: #fac083;
+    margin-top: 0.5%;
+}
+
+.navy_link {
+    text-decoration: none;
+    color: #24265d;
+}
+
+.white_link {
+    text-decoration: none;
+    color: #fef0e2;
+}
+
+.white_link:focus, .navy_link:focus {
+    text-decoration: underline;
+}
+
+
+footer a {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.bold_text {
+    font-weight: bold;
+}
+
+.non-mobile-phone {
+    display: none;
+}
+
+.tel-link a {
+    text-decoration: none;
+    color: #24265d;
+}
+
+.tel-link-white a {
+    text-decoration: none;
+    color: #fef0e2;
+}
+
+.navy-background {
+    background-color: #24265d;
+    color: #fef0e2;
+}
+
+
+.center-text {
+    text-align: center;
+}
+
+.map {
+    width: 100%;
+}
+
+/* Style rules for footer */
+footer {
+    color:#24265d;
+    background-color: #a2d1ee;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    font-size: .85em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+footer p {
+    padding: 0;
+    color: #24265d;
+}
+
+footer p a {
+    color: #24265d;
+    text-decoration: none;
+}
+
+footer img {
+    padding-top: 2%;
+    width: 30px;
+    height: auto;
+}
+
+
+/* responsive layout for all browsers */
+
+.site {
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+/* CSS Grid layout for modern browsers */
+
+@supports (grid-area: auto) {
+
+    @media screen and (min-width:620px) {
+
+        /* Style rules for main content */
+
+        .orange_box {
+            margin: 0;
+        }
+
+        .white_link:hover, .navy_link:hover {
+            text-decoration: underline;
+        }
+
+        .non-mobile-phone {
+            display: block;
+        }
+        .non-mobile-phone-inline {
+            display: inline;
+        }
+    
+        .mobile-phone {
+            display: none;
+        }
+
+        .map {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style rules for header */
+        header img {
+            padding-left: 0;
+        }
+
+        /* Style rules for navigatin */
+        nav {
+            position: static;
+            width: 100%;
+            text-align: center;
+            background-color: #a2d1ee;
+        }
+    
+        nav a {
+            border-right: 1px solid #24265d;
+            display: inline-block;
+            font-size: 1.1em;
+            border-top: none;
+            padding: 0.1em 0.75em;
+            font-weight: 500;
+        }
+    
+        nav a:last-child {
+            border-right: none;
+        }
+    
+        nav a:hover {
+            color: #fef0e2;
+            background-color: #24265d;
+            transform: scale(1.2);
+        }
+
+        nav label {
+            display: none;
+        }
+
+        /* Style rules for footer */
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        .footer > div {
+            width: 50%;
+        }
+        
+        /* CSS Grid layout for site rules */
+        .site {
+            max-width: none;
+            display: grid;
+            grid-template-areas: 
+            "header header"
+            "navigation navigation"
+            "feature sidebar"
+            "main sidebar"
+            "footer footer";
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .navigation {
+            grid-area: navigation;
+        }
+
+        .feature {
+            grid-area: feature;
+        }
+
+        .center-feature {
+            align-self: center;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+        
+    }
+
+    /* Style rules for viewports with minimum width 695px */
+    @media screen and (min-width: 695px) {
+
+        .two_column {
+            display: grid;
+            gap: 1%;
+            grid-template-columns: 40% 59%;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+    /* Style rules for viewports with minimum width 900px */
+    @media screen and (min-width: 900px) {
+
+        .main {
+            padding-left: 1%;
+            align-self: center;
+        }
+
+
+        .site {
+            grid-template-areas: 
+            "header header header"
+            "navigation navigation navigation"
+            "feature main main"
+            "sidebar sidebar sidebar"
+            "footer footer footer";
+        }
+
+        .festival1 {
+            display: block;
+        }
+
+        .map {
+            min-height: 300px;
+        }
+
+        .business-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .triplets {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+    }
+
+    /* Style rule for large viewports (minimum width 1200px) */
+    @media screen and (min-width: 1200px) {
+
+        .site {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+    }
+
+
+
+}
